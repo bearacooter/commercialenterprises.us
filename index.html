@@ -39,12 +39,14 @@
   a:hover { color: #7a1f24; }
   :focus-visible { outline: 2px solid #7a1f24; outline-offset: 3px; }
 
-  /* Hover states (these were style-hover attributes in the Claude Design file) */
   .btn-navy:hover       { background: #7a1f24 !important; color: #fff !important; }
   .btn-oxblood:hover    { background: #5e171b !important; color: #fff !important; }
   .btn-outline:hover    { background: #17233b !important; color: #f6f3ec !important; }
   .btn-green:hover      { background: #17301f !important; color: #fff !important; }
   .nav-link:hover       { color: #7a1f24 !important; }
+  .nav-link[aria-current="page"] { color: #7a1f24 !important; }
+  .nav-link[aria-current="page"] { color: #7a1f24 !important; }
+  .nav-link[aria-current="page"] { color: #7a1f24 !important; }
 
   [data-cal-link] { cursor: pointer; }
   [hidden] { display: none !important; }
@@ -57,17 +59,18 @@
 <body>
 <div style="font-family: 'Instrument Sans', system-ui, sans-serif; color: #17233b; background: #f6f3ec; min-height: 100vh;">
 
-  <!-- Season notice bar -->
-  <div style="background: #7a1f24; color: #f6f3ec; font-size: 14px; padding: 10px 24px; display: flex; flex-wrap: wrap; gap: 6px 16px; justify-content: center; text-align: center;">
-    <span style="font-family: 'Young Serif', serif; letter-spacing: 0.04em;">Notice</span>
-    <span>Appointments May – December. Tax season (late Jan – Apr): evening &amp; Saturday hours — call <a href="tel:2168837411" style="color: #f6f3ec;">216-883-7411</a></span>
+  <div style="background: #7a1f24; color: #f6f3ec; font-size: 14px; padding: 10px 24px; display: flex; flex-direction: column; align-items: center; gap: 6px; text-align: center;">
     <span style="display: inline-flex; flex-wrap: wrap; align-items: baseline; justify-content: center; gap: 6px 10px;">
       <span style="font-size: 11px; letter-spacing: 0.18em; text-transform: uppercase; border: 1px solid #f6f3ec; padding: 2px 6px;">New for 2027</span>
       <span>Book tax-season appointments with Benjamin, Mondays &amp; Tuesdays —
-        <!-- CAL.COM: Benjamin's event type -->
         <a href="https://cal.com/domzalski/tax-appointment" target="_blank" rel="noopener"
            data-cal-namespace="benjamin" data-cal-link="domzalski/tax-appointment" data-cal-config='{"layout":"month_view","theme":"light"}'
            style="color: #f6f3ec; font-weight: 600;">pick a time</a></span>
+    </span>
+    <span style="display: inline-flex; flex-wrap: wrap; align-items: baseline; justify-content: center; gap: 4px 12px;">
+      <strong style="font-family: 'Young Serif', serif; font-style: italic; letter-spacing: 0.04em;">Notice</strong>
+      <strong>Appointments recommended May – Dec.</strong>
+      <span>Tax season (late Jan – Apr): evening &amp; Saturday hours — call <a href="tel:2168837411" style="color: #f6f3ec;">216-883-7411</a></span>
     </span>
   </div>
 
@@ -80,21 +83,19 @@
           <span style="font-size: 12px; letter-spacing: 0.22em; text-transform: uppercase; color: #5b6476;">Taxes &amp; Accounting · Est. 1952</span>
         </span>
       </a>
-      <nav aria-label="Main" style="display: flex; flex-wrap: wrap; align-items: center; gap: 8px 28px; font-size: 15px;">
-        <a class="nav-link" href="#services" style="color: #17233b; text-decoration: none;">Services</a>
-        <a class="nav-link" href="#family" style="color: #17233b; text-decoration: none;">Our family</a>
-        <a class="nav-link" href="#visit" style="color: #17233b; text-decoration: none;">Visit</a>
-        <!-- CAL.COM: office booking page (all event types) -->
-        <a class="btn-navy" href="https://cal.com/domzalski" target="_blank" rel="noopener"
-           data-cal-namespace="office" data-cal-link="domzalski" data-cal-config='{"layout":"month_view","theme":"light"}'
-           style="background: #17233b; color: #f6f3ec; text-decoration: none; padding: 11px 18px; font-weight: 500;">Book an appointment</a>
+      <nav aria-label="Main" style="display: flex; flex-wrap: wrap; align-items: center; gap: 8px 24px; font-size: 15px;">
+        <a class="nav-link" href="services.html" style="color: #17233b; text-decoration: none;">Services</a>
+        <a class="nav-link" href="about.html" style="color: #17233b; text-decoration: none;">Our family</a>
+        <a class="nav-link" href="neighborhood.html" style="color: #17233b; text-decoration: none;">Neighborhood</a>
+        <a class="nav-link" href="what-to-bring.html" style="color: #17233b; text-decoration: none;">What to bring</a>
+        <a class="nav-link" href="index.html#visit" style="color: #17233b; text-decoration: none;">Visit</a>
+        <a class="btn-navy" href="https://cal.com/domzalski" target="_blank" rel="noopener" data-cal-namespace="office" data-cal-link="domzalski" data-cal-config='{"layout":"month_view","theme":"light"}' style="background: #17233b; color: #f6f3ec; text-decoration: none; padding: 11px 18px; font-weight: 500;">Book online with Ben</a>
       </nav>
     </div>
     <div style="border-top: 1px solid #17233b; border-bottom: 1px solid #17233b; height: 3px;"></div>
   </header>
 
   <main>
-  <!-- Hero (split layout) -->
   <section style="max-width: 1200px; margin: 0 auto; padding: 72px 24px 88px; display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 440px), 1fr)); gap: 64px; align-items: center;">
     <div style="display: flex; flex-direction: column; gap: 28px;">
       <div style="display: flex; align-items: center; gap: 14px; font-size: 13px; letter-spacing: 0.2em; text-transform: uppercase; color: #7a1f24;">
@@ -102,12 +103,12 @@
       </div>
       <h1 style="margin: 0; font-family: 'Young Serif', Georgia, serif; font-weight: 400; font-size: clamp(44px, 6.4vw, 84px); line-height: 0.98; letter-spacing: -0.025em; text-wrap: balance;">Accounting you can <span style="border-bottom: 6px double #7a1f24; padding-bottom: 2px;">count on.</span></h1>
       <p style="margin: 0; font-size: 19px; line-height: 1.6; color: #3b4458; max-width: 34em; text-wrap: pretty;">Three generations of the Domzalski family have kept the books and filed the returns for Cleveland households and small businesses since 1952. Same street. Same phone number. Same care.</p>
+      <p style="margin: 0; font-size: 15px; letter-spacing: 0.02em; color: #4a5366;">Call to book an appointment, or book online with Benjamin.</p>
       <div style="display: flex; flex-wrap: wrap; gap: 12px;">
         <a class="btn-oxblood" href="tel:2168837411" style="background: #7a1f24; color: #fff; text-decoration: none; padding: 16px 24px; font-weight: 500; font-size: 16px;">Call 216-883-7411</a>
-        <!-- CAL.COM: office booking page -->
         <a class="btn-outline" href="https://cal.com/domzalski" target="_blank" rel="noopener"
            data-cal-namespace="office" data-cal-link="domzalski" data-cal-config='{"layout":"month_view","theme":"light"}'
-           style="border: 1px solid #17233b; color: #17233b; text-decoration: none; padding: 15px 24px; font-weight: 500; font-size: 16px;">Book an appointment</a>
+           style="border: 1px solid #17233b; color: #17233b; text-decoration: none; padding: 15px 24px; font-weight: 500; font-size: 16px;">Book online with Ben</a>
       </div>
     </div>
     <figure style="margin: 0; position: relative; display: flex; flex-direction: column; gap: 14px;">
@@ -125,12 +126,11 @@
     </figure>
   </section>
 
-  <!-- Services -->
   <section id="services" style="background: #fbf9f4; border-top: 1px solid #d8d1c1; border-bottom: 1px solid #d8d1c1;">
     <div style="max-width: 1200px; margin: 0 auto; padding: 96px 24px; display: flex; flex-direction: column; gap: 40px;">
       <div style="display: flex; flex-wrap: wrap; justify-content: space-between; align-items: flex-end; gap: 16px;">
         <h2 style="margin: 0; font-family: 'Young Serif', serif; font-weight: 400; font-size: clamp(34px, 4.4vw, 56px); letter-spacing: -0.02em; line-height: 1.02;">What we handle</h2>
-        <p style="margin: 0; max-width: 28em; color: #4a5366; font-size: 16px; line-height: 1.55;">For individuals, families, and small-to-medium businesses across Northeast Ohio.</p>
+        <p style="margin: 0; max-width: 28em; color: #4a5366; font-size: 16px; line-height: 1.55;">For individuals, families, and small-to-medium businesses across Northeast Ohio. <a href="services.html">See the full list →</a></p>
       </div>
       <div style="border-top: 2px solid #17233b;">
         <div style="display: grid; grid-template-columns: 64px minmax(0, 1fr); border-bottom: 1px solid #17233b; font-size: 12px; letter-spacing: 0.2em; text-transform: uppercase; color: #5b6476;">
@@ -146,7 +146,6 @@
     </div>
   </section>
 
-  <!-- Family -->
   <section id="family" style="background: #24432f; color: #f6f3ec;">
     <div style="max-width: 1200px; margin: 0 auto; padding: 96px 24px; display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 420px), 1fr)); gap: 56px;">
       <div style="display: flex; flex-direction: column; gap: 22px;">
@@ -159,7 +158,7 @@
           <div style="border: 1px solid rgba(246,243,236,0.6); padding: 8px;">
             <img src="images/benjamin-and-jeffrey.jpg" alt="Benjamin Domzalski and his father, Jeffrey, standing by the water at sunset" width="1320" height="990" loading="lazy" style="display: block; width: 100%; height: auto; aspect-ratio: 4 / 3; object-fit: cover;">
           </div>
-          <figcaption style="font-size: 14px; color: #c2cfbf; font-style: italic;">Benjamin and his father, Jeffrey.</figcaption>
+          <figcaption style="font-size: 14px; color: #c2cfbf; font-style: italic;">Benjamin and his father, Jeffrey. <a href="about.html" style="color: #f6f3ec;">Read the family story →</a></figcaption>
         </figure>
       </div>
       <ol style="margin: 0; padding: 0; list-style: none; display: flex; flex-direction: column; border-top: 1px solid rgba(246,243,236,0.5);">
@@ -188,11 +187,6 @@
     </div>
   </section>
 
-  <!--
-    ARCHIVE: hidden until real photos + captions exist (an empty gallery was the
-    audit's top complaint about the old site). To turn it on: put photos in
-    images/, fill the six <img>/<figcaption> pairs below, and delete `hidden`.
-  -->
   <section id="archive" hidden style="max-width: 1200px; margin: 0 auto; padding: 96px 24px 0; display: flex; flex-direction: column; gap: 36px;">
     <div style="display: flex; flex-wrap: wrap; justify-content: space-between; align-items: flex-end; gap: 16px;">
       <h2 style="margin: 0; font-family: 'Young Serif', serif; font-weight: 400; font-size: clamp(34px, 4.4vw, 56px); letter-spacing: -0.02em; line-height: 1.02;">From the archive</h2>
@@ -205,11 +199,9 @@
         </div>
         <figcaption style="font-size: 14px; color: #5b6476; font-style: italic;">Caption: year, who, what</figcaption>
       </figure>
-      <!-- copy the <figure> above for archive-2 … archive-6 -->
     </div>
   </section>
 
-  <!-- Visit / book -->
   <section id="visit" style="max-width: 1200px; margin: 0 auto; padding: 96px 24px; display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 340px), 1fr)); gap: 48px;">
     <div style="display: flex; flex-direction: column; gap: 20px;">
       <h2 style="margin: 0; font-family: 'Young Serif', serif; font-weight: 400; font-size: clamp(34px, 4.4vw, 56px); letter-spacing: -0.02em; line-height: 1.02;">Come in, or call.</h2>
@@ -243,23 +235,18 @@
     <div style="display: flex; flex-direction: column; gap: 14px;">
       <div style="font-family: 'Young Serif', serif; font-size: 20px;">Book a time</div>
       <div style="background: #fbf9f4; border: 1px solid #17233b; outline: 1px solid #d8d1c1; outline-offset: 4px; padding: 28px; display: flex; flex-direction: column; gap: 16px;">
-        <p style="margin: 0; font-size: 16px; line-height: 1.55; color: #3b4458; text-wrap: pretty;">Walk-ins are welcome during off-season office hours, but we always recommend an appointment so we're ready for you.</p>
-        <!-- CAL.COM: office booking page -->
-        <a class="btn-oxblood" href="https://cal.com/domzalski" target="_blank" rel="noopener"
-           data-cal-namespace="office" data-cal-link="domzalski" data-cal-config='{"layout":"month_view","theme":"light"}'
-           style="background: #7a1f24; color: #fff; text-decoration: none; padding: 15px 20px; font-weight: 500; text-align: center;">See available times</a>
+        <p style="margin: 0; font-size: 16px; line-height: 1.55; color: #3b4458; text-wrap: pretty;">Call to book an appointment with any of us, or book online with Benjamin.</p>
+        <a class="btn-oxblood" href="tel:2168837411" style="background: #7a1f24; color: #fff; text-decoration: none; padding: 15px 20px; font-weight: 500; text-align: center;">Call 216-883-7411</a>
         <div style="border-top: 1px solid #d8d1c1; padding-top: 16px; display: flex; flex-direction: column; gap: 10px;">
           <div style="display: flex; flex-wrap: wrap; align-items: baseline; gap: 10px;">
             <span style="font-size: 11px; letter-spacing: 0.18em; text-transform: uppercase; border: 1px solid #7a1f24; color: #7a1f24; padding: 3px 7px;">New for 2027</span>
             <span style="font-family: 'Young Serif', serif; font-size: 19px;">Book with Benjamin</span>
           </div>
           <p style="margin: 0; font-size: 15px; line-height: 1.55; color: #3b4458; text-wrap: pretty;">Benjamin Domzalski takes appointments on Mondays and Tuesdays. Pick a time on his calendar.</p>
-          <!-- CAL.COM: Benjamin's event type -->
           <a class="btn-green" href="https://cal.com/domzalski/tax-appointment" target="_blank" rel="noopener"
              data-cal-namespace="benjamin" data-cal-link="domzalski/tax-appointment" data-cal-config='{"layout":"month_view","theme":"light"}'
              style="background: #24432f; border: 1px solid #24432f; color: #f6f3ec; text-decoration: none; padding: 13px 20px; font-weight: 500; text-align: center;">Open Benjamin's calendar</a>
         </div>
-        <a href="tel:2168837411" style="text-align: center; font-size: 15px;">Or call 216-883-7411</a>
       </div>
     </div>
   </section>
@@ -277,7 +264,6 @@
   </footer>
 </div>
 
-<!-- Page content lists (edit services and hours here) -->
 <script>
 (function () {
   var DATA = {
@@ -292,8 +278,8 @@
       { n: '06', t: 'Planning', d: 'Reporting and advice to help your business grow.' }
     ],
     taxHours: [
-      ['Monday', '10:00 am – 5:00 pm'], ['Tuesday', '12:00 – 8:00 pm'], ['Wednesday', '12:00 – 8:00 pm'],
-      ['Thursday', '12:00 – 8:00 pm'], ['Friday', '10:00 am – 5:00 pm'], ['Saturday', '10:00 am – 5:00 pm'], ['Sunday', 'Closed']
+      ['Monday', '10:00 am – 5:00 pm'], ['Tuesday', '12:00 – 7:00 pm'], ['Wednesday', '12:00 – 7:00 pm'],
+      ['Thursday', '12:00 – 7:00 pm'], ['Friday', '10:00 am – 5:00 pm'], ['Saturday', '10:00 am – 5:00 pm'], ['Sunday', 'Closed']
     ],
     hours: [
       ['Monday', '1:00 – 5:00 pm'], ['Tuesday', '1:00 – 5:00 pm'], ['Wednesday', '1:00 – 5:00 pm'],
@@ -327,12 +313,6 @@
 })();
 </script>
 
-<!--
-  CAL.COM EMBED (popup on click)
-  Setup: replace domzalski and tax-appointment throughout this file.
-  Compare against Cal.com > Event Types > (event) > Embed > "Pop up via element click"
-  and match the origin there if Cal.com shows something different.
--->
 <script type="text/javascript">
   (function (C, A, L) { let p = function (a, ar) { a.q.push(ar); }; let d = C.document; C.Cal = C.Cal || function () { let cal = C.Cal; let ar = arguments; if (!cal.loaded) { cal.ns = {}; cal.q = cal.q || []; d.head.appendChild(d.createElement("script")).src = A; cal.loaded = true; } if (ar[0] === L) { const api = function () { p(api, arguments); }; const namespace = ar[1]; api.q = api.q || []; if (typeof namespace === "string") { cal.ns[namespace] = cal.ns[namespace] || api; p(cal.ns[namespace], ar); p(cal, ["initNamespace", namespace]); } else p(cal, ar); return; } p(cal, ar); }; })(window, "https://app.cal.com/embed/embed.js", "init");
 
@@ -347,14 +327,10 @@
     Cal.ns[ns]("ui", CAL_UI);
   });
 
-  // Buttons are real links to cal.com. Once the embed script has loaded, suppress
-  // the navigation so only the popup opens. If the script is blocked (ad blocker,
-  // privacy extension), the link opens the Cal.com booking page in a new tab.
   (function () {
     var calReady = false;
     var s = document.querySelector('script[src="https://app.cal.com/embed/embed.js"]');
     if (s) s.addEventListener("load", function () { calReady = true; });
-    // Registered on window (bubble phase) so Cal's own document-level handler runs first.
     window.addEventListener("click", function (e) {
       var a = e.target.closest && e.target.closest("a[data-cal-link]");
       if (a && calReady) e.preventDefault();
