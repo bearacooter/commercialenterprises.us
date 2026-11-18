@@ -9,8 +9,8 @@
   end:
 - show: true
   badge: New for 2027
-  headline: Book tax-season appointments with Benjamin.
-  text: Mondays and Tuesdays, online.
+  headline: Book tax-season appointments with Benjamin online.
+  text: During tax season (late January to April 15), Benjamin takes appointments on Mondays and Tuesdays.
   button_text: Pick a time
   button_link: https://cal.com/domzalski/tax-appointment
   color: navy

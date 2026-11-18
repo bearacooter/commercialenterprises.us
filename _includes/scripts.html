@@ -6,6 +6,10 @@
       var s = n.getAttribute('data-start'), e = n.getAttribute('data-end');
       if ((s && s > today) || (e && e < today)) n.remove();
     });
+    document.querySelectorAll('.dated').forEach(function (n) {
+      var s = n.getAttribute('data-start'), e = n.getAttribute('data-end');
+      n.hidden = !!((s && s > today) || (e && e < today));
+    });
     var box = document.querySelector('.notices');
     if (box && !box.querySelector('.notice')) box.remove();
   })();
