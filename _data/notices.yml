@@ -1,13 +1,13 @@
 - show: true
   badge: Out of office
   headline: Benjamin is out of the office, welcoming a new Domzalski into the world.
-  text: "He's reachable by email at ben@commercialenterprises.us. For the rest of the office, call 216-883-7411. Prayers appreciated. Bóg zapłać!"
+  text: "Reach him by email at ben@commercialenterprises.us, and he will gladly meet with you by appointment at your earliest convenience. For everything else, call the office at 216-883-7411. Prayers appreciated. Bóg zapłać!"
   button_text: Email Benjamin
   button_link: mailto:ben@commercialenterprises.us
   color: oxblood
   start: 2026-11-18
   end:
-- show: true
+- show: false
   badge: New for 2027
   headline: Book tax-season appointments with Benjamin online.
   text: During tax season (late January to April 15), Benjamin takes appointments on Mondays and Tuesdays.

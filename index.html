@@ -139,6 +139,8 @@ schema: true
       <div style="background: #fbf9f4; border: 1px solid #17233b; outline: 1px solid #d8d1c1; outline-offset: 4px; padding: 28px; display: flex; flex-direction: column; gap: 16px;">
         <p style="margin: 0; font-size: 16px; line-height: 1.55; color: #3b4458; text-wrap: pretty;">Call to book an appointment with any of us, or book online with Benjamin.</p>
         <a class="btn-oxblood" href="tel:2168837411" style="background: #7a1f24; color: #fff; text-decoration: none; padding: 15px 20px; font-weight: 500; text-align: center;">Call 216-883-7411</a>
+        {%- assign tax_booking = site.data.notices | where: "badge", "New for 2027" | first -%}
+        {%- if tax_booking.show %}
         <div style="border-top: 1px solid #d8d1c1; padding-top: 16px; display: flex; flex-direction: column; gap: 10px;">
           <div style="display: flex; flex-wrap: wrap; align-items: baseline; gap: 10px;">
             <span style="font-size: 11px; letter-spacing: 0.18em; text-transform: uppercase; border: 1px solid #7a1f24; color: #7a1f24; padding: 3px 7px;">New for 2027</span>
@@ -150,6 +152,7 @@ schema: true
              data-cal-namespace="benjamin" data-cal-link="domzalski" data-cal-config='{"layout":"month_view","theme":"light"}'
              style="background: #24432f; border: 1px solid #24432f; color: #f6f3ec; text-decoration: none; padding: 13px 20px; font-weight: 500; text-align: center;">Open Benjamin's calendar</a>
         </div>
+        {%- endif %}
       </div>
     </div>
   </section>
