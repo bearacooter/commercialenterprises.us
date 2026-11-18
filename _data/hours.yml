@@ -1,0 +1,17 @@
+current_season: off_season
+tax_season:
+  - { day: Monday, hours: "10:00 am – 5:00 pm", opens: "10:00", closes: "17:00" }
+  - { day: Tuesday, hours: "12:00 – 7:00 pm", opens: "12:00", closes: "19:00" }
+  - { day: Wednesday, hours: "12:00 – 7:00 pm", opens: "12:00", closes: "19:00" }
+  - { day: Thursday, hours: "12:00 – 7:00 pm", opens: "12:00", closes: "19:00" }
+  - { day: Friday, hours: "10:00 am – 5:00 pm", opens: "10:00", closes: "17:00" }
+  - { day: Saturday, hours: "10:00 am – 5:00 pm", opens: "10:00", closes: "17:00" }
+  - { day: Sunday, hours: Closed, opens: "", closes: "" }
+off_season:
+  - { day: Monday, hours: "1:00 – 5:00 pm", opens: "13:00", closes: "17:00" }
+  - { day: Tuesday, hours: "1:00 – 5:00 pm", opens: "13:00", closes: "17:00" }
+  - { day: Wednesday, hours: "1:00 – 5:00 pm", opens: "13:00", closes: "17:00" }
+  - { day: Thursday, hours: "1:00 – 5:00 pm", opens: "13:00", closes: "17:00" }
+  - { day: Friday, hours: "1:00 – 5:00 pm", opens: "13:00", closes: "17:00" }
+  - { day: Saturday, hours: Closed, opens: "", closes: "" }
+  - { day: Sunday, hours: Closed, opens: "", closes: "" }

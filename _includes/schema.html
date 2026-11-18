@@ -1,0 +1,32 @@
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "AccountingService",
+  "name": "Commercial Enterprises, Inc.",
+  "description": "Tax preparation, bookkeeping, and payroll for individuals and small businesses in Cleveland since 1952.",
+  "url": "https://commercialenterprises.us/",
+  "image": "https://commercialenterprises.us/images/henry-sr-1961.jpg",
+  "telephone": "+1-216-883-7411",
+  "email": "info@commercialenterprises.us",
+  "foundingDate": "1952",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "5720 Fleet Avenue",
+    "addressLocality": "Cleveland",
+    "addressRegion": "OH",
+    "postalCode": "44105",
+    "addressCountry": "US"
+  },
+  "openingHoursSpecification": [
+    {%- assign first = true -%}
+    {%- for h in site.data.hours[site.data.hours.current_season] -%}
+    {%- if h.opens and h.opens != '' -%}
+    {%- unless first %},{% endunless %}
+    { "@type": "OpeningHoursSpecification", "dayOfWeek": "https://schema.org/{{ h.day }}", "opens": "{{ h.opens }}", "closes": "{{ h.closes }}" }
+    {%- assign first = false -%}
+    {%- endif -%}
+    {%- endfor %}
+  ],
+  "sameAs": ["https://www.facebook.com/117228058337042"]
+}
+</script>

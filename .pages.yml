@@ -1,0 +1,90 @@
+content:
+  - name: notices
+    label: Site notices
+    type: file
+    path: _data/notices.yml
+    format: yaml
+    list: true
+    fields:
+      - name: show
+        label: Show on the site
+        type: boolean
+        description: Turn off to hide this notice without deleting it.
+      - name: badge
+        label: Badge
+        type: string
+        description: Short label in the little box, like "New for 2027" or "Closed".
+      - name: headline
+        label: Headline
+        type: string
+      - name: text
+        label: Text
+        type: text
+      - name: button_text
+        label: Button text
+        type: string
+        description: Leave blank for no button.
+      - name: button_link
+        label: Button link
+        type: string
+        description: A web address, mailto:you@example.com, or tel:2168837411.
+      - name: color
+        label: Color
+        type: select
+        options:
+          values: [oxblood, navy, green]
+      - name: start
+        label: Show from
+        type: date
+        description: Leave blank to show right away.
+        options:
+          format: yyyy-MM-dd
+      - name: end
+        label: Show until
+        type: date
+        description: The notice hides itself after this day. Leave blank to keep it up.
+        options:
+          format: yyyy-MM-dd
+  - name: hours
+    label: Office hours
+    type: file
+    path: _data/hours.yml
+    format: yaml
+    fields:
+      - name: current_season
+        label: Season Google should show
+        type: select
+        options:
+          values: [tax_season, off_season]
+      - name: tax_season
+        label: Tax season hours
+        type: object
+        list: true
+        fields:
+          - name: day
+            type: string
+          - name: hours
+            label: Hours as shown on the site
+            type: string
+          - name: opens
+            label: Opens (24-hour, like 13:00; blank if closed)
+            type: string
+          - name: closes
+            label: Closes (24-hour, like 17:00; blank if closed)
+            type: string
+      - name: off_season
+        label: Off-season hours
+        type: object
+        list: true
+        fields:
+          - name: day
+            type: string
+          - name: hours
+            label: Hours as shown on the site
+            type: string
+          - name: opens
+            label: Opens (24-hour, like 13:00; blank if closed)
+            type: string
+          - name: closes
+            label: Closes (24-hour, like 17:00; blank if closed)
+            type: string

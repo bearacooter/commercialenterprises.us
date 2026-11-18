@@ -1,0 +1,16 @@
+  <header class="wrap" style="padding-top: 24px;">
+    <div style="display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 16px; padding-bottom: 18px;">
+      <a class="brand" href="index.html">
+        <span class="brand-mark" aria-hidden="true">CE</span>
+        <span style="display: flex; flex-direction: column; gap: 2px;">
+          <span class="brand-name">Commercial Enterprises</span>
+          <span class="brand-tag">Taxes &amp; Accounting · Est. 1952</span>
+        </span>
+      </a>
+      <nav aria-label="Main" style="display: flex; flex-wrap: wrap; align-items: center; gap: 8px 24px; font-size: 15px;">
+        {% for item in site.data.nav %}<a class="nav-link" href="{{ item.href }}"{% if item.key == page.nav %} aria-current="page"{% endif %}>{{ item.label }}</a>
+        {% endfor %}<a class="btn-navy" href="https://cal.com/domzalski" target="_blank" rel="noopener" data-cal-namespace="office" data-cal-link="domzalski" data-cal-config='{"layout":"month_view","theme":"light"}'>Book online with Ben</a>
+      </nav>
+    </div>
+    <div class="rule"></div>
+  </header>
