@@ -1,0 +1,6 @@
+- { key: home, label: Home, href: index.html }
+- { key: services, label: Services, href: services.html }
+- { key: about, label: Our family, href: about.html }
+- { key: neighborhood, label: Neighborhood, href: neighborhood.html }
+- { key: what-to-bring, label: What to bring, href: what-to-bring.html }
+- { key: visit, label: Visit, href: "index.html#visit" }

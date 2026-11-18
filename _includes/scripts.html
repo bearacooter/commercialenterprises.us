@@ -1,0 +1,28 @@
+<script>
+  document.querySelectorAll('.year').forEach(function (e) { e.textContent = new Date().getFullYear(); });
+  (function () {
+    var d = new Date(), today = d.getFullYear() + '-' + ('0' + (d.getMonth() + 1)).slice(-2) + '-' + ('0' + d.getDate()).slice(-2);
+    document.querySelectorAll('.notice').forEach(function (n) {
+      var s = n.getAttribute('data-start'), e = n.getAttribute('data-end');
+      if ((s && s > today) || (e && e < today)) n.remove();
+    });
+    document.querySelectorAll('.dated').forEach(function (n) {
+      var s = n.getAttribute('data-start'), e = n.getAttribute('data-end');
+      n.hidden = !!((s && s > today) || (e && e < today));
+    });
+    var box = document.querySelector('.notices');
+    if (box && !box.querySelector('.notice')) box.remove();
+  })();
+  (function (C, A, L) { let p = function (a, ar) { a.q.push(ar); }; let d = C.document; C.Cal = C.Cal || function () { let cal = C.Cal; let ar = arguments; if (!cal.loaded) { cal.ns = {}; cal.q = cal.q || []; d.head.appendChild(d.createElement("script")).src = A; cal.loaded = true; } if (ar[0] === L) { const api = function () { p(api, arguments); }; const namespace = ar[1]; api.q = api.q || []; if (typeof namespace === "string") { cal.ns[namespace] = cal.ns[namespace] || api; p(cal.ns[namespace], ar); p(cal, ["initNamespace", namespace]); } else p(cal, ar); return; } p(cal, ar); }; })(window, "https://app.cal.com/embed/embed.js", "init");
+  var CAL_UI = { theme: "light", layout: "month_view", hideEventTypeDetails: false, cssVarsPerTheme: { light: { "cal-brand": "#7a1f24" }, dark: { "cal-brand": "#7a1f24" } } };
+  ["office", "benjamin"].forEach(function (ns) { Cal("init", ns, { origin: "https://app.cal.com" }); Cal.ns[ns]("ui", CAL_UI); });
+  (function () {
+    var calReady = false;
+    var s = document.querySelector('script[src="https://app.cal.com/embed/embed.js"]');
+    if (s) s.addEventListener("load", function () { calReady = true; });
+    window.addEventListener("click", function (e) {
+      var a = e.target.closest && e.target.closest("a[data-cal-link]");
+      if (a && calReady) e.preventDefault();
+    });
+  })();
+</script>

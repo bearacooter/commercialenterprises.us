@@ -1,0 +1,24 @@
+{%- assign today = site.time | date: '%Y-%m-%d' -%}
+{%- capture items -%}
+{%- for n in site.data.notices -%}
+{%- unless n.show -%}{%- continue -%}{%- endunless -%}
+{%- assign s = n.start | date: '%Y-%m-%d' -%}
+{%- assign e = n.end | date: '%Y-%m-%d' -%}
+{%- if s != nil and s != '' and s > today -%}{%- continue -%}{%- endif -%}
+{%- if e != nil and e != '' and e < today -%}{%- continue -%}{%- endif -%}
+  <div class="notice notice--{{ n.color | default: 'oxblood' }}" data-start="{{ s }}" data-end="{{ e }}">
+    <p class="notice-inner" style="margin: 0;">
+      {%- if n.badge and n.badge != '' %}<span class="notice-badge">{{ n.badge }}</span>{% endif %}
+      {%- if n.headline and n.headline != '' %} <strong class="notice-headline">{{ n.headline }}</strong>{% endif %}
+      {%- if n.text and n.text != '' %} <span>{{ n.text }}</span>{% endif %}
+      {%- if n.button_text and n.button_text != '' and n.button_link and n.button_link != '' %} <a class="notice-btn" href="{{ n.button_link }}"{% if n.button_link contains 'http' %} target="_blank" rel="noopener"{% endif %}>{{ n.button_text }}</a>{% endif %}
+    </p>
+  </div>
+{% endfor -%}
+{%- endcapture -%}
+{%- assign trimmed = items | strip -%}
+{%- if trimmed != '' %}
+  <div class="notices" role="region" aria-label="Office notices">
+{{ items }}
+  </div>
+{%- endif %}

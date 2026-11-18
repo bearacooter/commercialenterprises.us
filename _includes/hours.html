@@ -1,0 +1,3 @@
+{%- for h in site.data.hours[include.season] %}
+        <div class="hours-row"><span>{{ h.day }}</span><span class="dots" aria-hidden="true"></span><span class="time">{{ h.hours }}</span></div>
+{%- endfor %}
